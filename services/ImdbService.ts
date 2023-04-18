@@ -10,11 +10,11 @@ export async function getTrending(pageNumber: string): Promise<any> {
         }
         console.log(page);
 
-        const response = await fetch(
+        const response = await axios(
             `${BASE_URL}/trending/movie/week?api_key=${API_KEY}&page=${page}`
         );
 
-        return response;
+        return response.data;
     } catch (err) {
         throw ErrorHandler(err);
     }
