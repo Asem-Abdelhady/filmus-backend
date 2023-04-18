@@ -34,3 +34,42 @@ export async function getImdbMovies(pageNumber: string): Promise<any> {
         throw ErrorHandler(err);
     }
 }
+
+export async function getMovieDetail(movieId: string): Promise<any> {
+    try {
+        const id: number = parseInt(movieId);
+
+        const response = await axios.get(
+            `${BASE_URL}/movie/${id}?api_key=${API_KEY}&language=en-US`
+        );
+        return response.data;
+    } catch (err) {
+        throw ErrorHandler(err);
+    }
+}
+
+export async function getMovieVideos(movieId: string): Promise<any> {
+    try {
+        const id: number = parseInt(movieId);
+
+        const response = await axios.get(
+            `${BASE_URL}/movie/${id}/videos?api_key=${API_KEY}&language=en-US`
+        );
+        return response.data;
+    } catch (err) {
+        throw ErrorHandler(err);
+    }
+}
+
+export async function getMovieCredits(movieId: string): Promise<any> {
+    try {
+        const id: number = parseInt(movieId);
+
+        const response = await axios.get(
+            `${BASE_URL}/movie/${id}/credits?api_key=${API_KEY}&language=en-US`
+        );
+        return response.data;
+    } catch (err) {
+        throw ErrorHandler(err);
+    }
+}
