@@ -199,10 +199,6 @@ export async function createLovedMovie(
 ): Promise<ISavedMovieSchema> {
     try {
         const user = await model.findById(userId);
-        console.log('User ', user);
-        console.log('ID: ', userId);
-        console.log('Data: ', movieData);
-
         if (user == null) throw new Error('No such a user');
         const sanitized = sanitizeSavedMovie(movieData);
         user.lovedMovies.set(String(movieData.id), sanitized);

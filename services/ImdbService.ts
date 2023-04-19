@@ -14,7 +14,6 @@ export async function getTrending(
         if (page === 0 || page > 1000) {
             page = 1;
         }
-        console.log(page);
 
         const response = await axios(
             `${BASE_URL}/trending/movie/week?api_key=${API_KEY}&page=${page}`
