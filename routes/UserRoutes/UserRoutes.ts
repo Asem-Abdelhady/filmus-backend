@@ -18,31 +18,31 @@ userRouter
     .delete(protect, userHandler.deleteUserHandler);
 
 userRouter
-    .route('/:id/loved')
+    .route('/:userId/loved')
     .get(protect, userHandler.getLovedMoviesHandler)
     .post(protect, userHandler.createLovedMovieHandler);
 userRouter
-    .route('/:id/loved/:id')
+    .route('/:userId/loved/:id')
     .get(protect, userHandler.getLovedMovieHandler)
     .put(protect, userHandler.updateLovedMovieHandler)
     .delete(protect, userHandler.deleteLovedMovieHandler);
 
 userRouter
-    .route('/:id/watched')
+    .route('/:userId/watched')
     .get(protect, userHandler.getWatchedMoviesHandler)
     .post(protect, userHandler.createWatchedMovieHandler);
 userRouter
-    .route('/:id/watched/:id')
+    .route('/:userId/watched/:id')
     .get(protect, userHandler.getWatchedMovieHandler)
     .put(protect, userHandler.updateWatchedMovieHandler)
     .delete(protect, userHandler.deleteWatchedMovieHandler);
 
 userRouter
-    .route('/:id/to-watch')
+    .route('/:userId/to-watch')
     .get(protect, userHandler.getToWatchMoviesHandler)
     .post(protect, userHandler.createToWatchMovieHandler);
 userRouter
-    .route('/:id/to-watch/:id')
+    .route('/:userId/to-watch/:id')
     .get(protect, userHandler.getToWatchMovieHandler)
     .put(protect, userHandler.updateToWatchMovieHandler)
     .delete(protect, userHandler.deleteToWatchMovieHandler);

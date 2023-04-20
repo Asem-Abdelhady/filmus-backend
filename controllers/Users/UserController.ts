@@ -94,7 +94,7 @@ class UsersHandler {
 
     getLovedMovieHandler = asyncHandler(async (req: Request, res: Response) => {
         const lovedMovie = await getLovedMovie(
-            req.params.id,
+            req.params.userId,
             req.params.id,
             this.model
         );
@@ -104,7 +104,7 @@ class UsersHandler {
     getWatchedMovieHandler = asyncHandler(
         async (req: Request, res: Response) => {
             const watchedMovie = await getWatchedMovie(
-                req.params.id,
+                req.params.userId,
                 req.params.id,
                 this.model
             );
@@ -115,7 +115,7 @@ class UsersHandler {
     getToWatchMovieHandler = asyncHandler(
         async (req: Request, res: Response) => {
             const toWatchMovie = await getToWatchMovie(
-                req.params.id,
+                req.params.userId,
                 req.params.id,
                 this.model
             );
