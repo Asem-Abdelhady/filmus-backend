@@ -76,7 +76,7 @@ export async function updateUser(
         const userFound = await model.findById(userId);
         if (userFound == null) throw new Error('User not found');
         const salt = await bcrypt.genSalt(10);
-        const hashedPassword = await bcrypt.hash(userFound.password, salt);
+        const hashedPassword = await bcrypt.hash(user.password, salt);
         userFound.password = hashedPassword;
         userFound.email = user.email;
         userFound.username = user.username;
